@@ -1,8 +1,17 @@
 # ninja log v5
-17	439	7633828716018067	CMakeFiles/openglStudy.dir/glad.c.obj	63b646cc2fdd8b39
-4	552	7633828717132635	CMakeFiles/openglStudy.dir/main.cpp.obj	786e0b4a375ad5f5
-552	1133	7633828722004339	openglStudy.exe	3c5368a978867d4a
-5	902	7633839192141152	CMakeFiles/openglStudy.dir/main.cpp.obj	786e0b4a375ad5f5
-903	1377	7633839195608749	openglStudy.exe	3c5368a978867d4a
-5	978	7633846207826494	CMakeFiles/openglStudy.dir/main.cpp.obj	786e0b4a375ad5f5
-979	1480	7633846211762003	openglStudy.exe	3c5368a978867d4a
+20	848	7634657884975715	CMakeFiles/openglStudy.dir/glad.c.obj	af4cdee77f39936b
+753	888	7634657885066249	wrapper/wrapper.lib	9a584fbde1e3d52c
+2	741	7634657883743315	CMakeFiles/openglStudy.dir/main.cpp.obj	af8f3c82331e847c
+888	1218	7634657887573885	openglStudy.exe	ca4cf90d636726f3
+49	753	7634657884034350	wrapper/CMakeFiles/wrapper.dir/checkError.cpp.obj	1666d933bfd61da2
+32	734	7634657883848558	CMakeFiles/openglStudy.dir/wrapper/checkError.cpp.obj	9950b3eeeabea5ef
+21	948	7634681138272902	application/CMakeFiles/app.dir/application.cpp.obj	8ac8b589af0936a8
+3	1022	7634681138527807	CMakeFiles/openglStudy.dir/main.cpp.obj	af8f3c82331e847c
+948	1252	7634681140966210	application/app.lib	f23891d2202589ba
+1252	2062	7634681147772031	openglStudy.exe	dadf7bf19bd789c
+4	995	7634681415106688	CMakeFiles/openglStudy.dir/main.cpp.obj	af8f3c82331e847c
+996	1674	7634681420128567	openglStudy.exe	dadf7bf19bd789c
+16	559	7634682138398098	application/CMakeFiles/app.dir/application.cpp.obj	8ac8b589af0936a8
+3	588	7634682138675097	CMakeFiles/openglStudy.dir/main.cpp.obj	af8f3c82331e847c
+560	693	7634682139187244	application/app.lib	f23891d2202589ba
+693	1010	7634682141976470	openglStudy.exe	dadf7bf19bd789c

@@ -3,18 +3,17 @@
 //注意：glad头文件必须在glfw引用之前引用
 #include<glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <string>
+#include <assert.h>//断言
+#include "wrapper/checkError.h"
+#include "application/application.h"
 
-/*
-* 目标：
-	-创建glfw的窗体系统
-	-加入窗体变化的事件回调
-	-加入键盘消息事件回调
-* 
-*/
 
 //声明且实现一个响应窗体大小变化的函数
 void frameBufferSizeCallBack(GLFWwindow* window, int width, int height) {
-	std::cout << "窗体最新大小：" << width << " , " << height << std::endl;
+	//std::cout << "窗体最新大小：" << width << " , " << height << std::endl;
+	//让视口大小和窗口大小一起改变
+	GL_CALL(glViewport(0, 0, width, height));
 }
 
 //声明且实现一个键盘消息回调函数
@@ -43,6 +42,8 @@ void keyCallBack(GLFWwindow* window, int key, int scancode, int action, int mods
 	std::cout << "mods：" << mods << std::endl;
 }
 
+
+
 int main() {
 //1 初始化GLFW基本环境
 	glfwInit();
@@ -62,6 +63,17 @@ int main() {
 	//设置监听，监听键盘消息
 	glfwSetKeyCallback(window, keyCallBack);
 
+	//使用glad加载所有当前版本opengl的函数
+	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+	{
+		std::cout << "Failed to initialize GLAD" << std::endl;
+		return -1;
+	}
+
+	//设置opengl视口以及清理颜色
+	GL_CALL(glViewport(0, 0, 800, 600));
+	GL_CALL(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
+
 
 //3 执行窗体循环
 	while (!glfwWindowShouldClose(window)) {
@@ -69,6 +81,14 @@ int main() {
 		//检查消息队列是否有需要处理的鼠标、键盘等消息
 		//如果有的话就将消息批量处理，清空队列
 		glfwPollEvents();
+
+		//执行opengl画布清理操作
+		GL_CALL(glClear(GL_COLOR_BUFFER_BIT));
+
+		//渲染操作
+		
+		//切换双缓存
+		glfwSwapBuffers(window);
 	}
 
 

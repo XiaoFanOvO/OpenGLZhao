@@ -7,11 +7,12 @@
   },
   "ExpandedNodes": [
     "",
-    "\\thirdParty",
-    "\\thirdParty\\include",
+    "\\application",
+    "\\thirdParty\\include\\glad",
     "\\thirdParty\\include\\GLFW",
-    "\\thirdParty\\lib"
+    "\\thirdParty\\lib",
+    "\\wrapper"
   ],
-  "SelectedNode": "\\main.cpp",
+  "SelectedNode": "\\application\\application.h",
   "PreviewInSolutionExplorer": false
 }

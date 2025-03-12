@@ -8,6 +8,10 @@ project(OpenGL_Lecture)
 #本工程支持的C++版本
 set(CMAKE_CXX_STANDARD 17)
 
+#往项目中加入一个全局的预编译宏
+add_definitions(-DDEBUG)
+
+
 include_directories(
 	SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/thirdParty/include
 )
@@ -15,8 +19,10 @@ include_directories(
 link_directories(
 	SYSTEM ${CMAKE_CURRENT_SOURCE_DIR}/thirdParty/lib
 )
+add_subdirectory(wrapper)
+add_subdirectory(application)
 
 #本工程所有cpp文件编译链接，生成exe
 add_executable(openglStudy "main.cpp" "glad.c")
 
-target_link_libraries(openglStudy glfw3.lib)
+target_link_libraries(openglStudy glfw3.lib wrapper app)
