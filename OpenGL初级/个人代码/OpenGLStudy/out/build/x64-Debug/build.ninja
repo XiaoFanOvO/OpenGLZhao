@@ -39,7 +39,7 @@ include CMakeFiles\rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = D$:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug\
+cmake_ninja_workdir = D$:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug\
 # =============================================================================
 # Object build statements for EXECUTABLE target openglStudy
 
@@ -49,19 +49,19 @@ cmake_ninja_workdir = D$:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGL
 
 build cmake_object_order_depends_target_openglStudy: phony || cmake_object_order_depends_target_app cmake_object_order_depends_target_wrapper
 
-build CMakeFiles\openglStudy.dir\main.cpp.obj: CXX_COMPILER__openglStudy_unscanned_Debug D$:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\main.cpp || cmake_object_order_depends_target_openglStudy
+build CMakeFiles\openglStudy.dir\main.cpp.obj: CXX_COMPILER__openglStudy_unscanned_Debug D$:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\main.cpp || cmake_object_order_depends_target_openglStudy
   DEFINES = -DDEBUG
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -external:ID:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\thirdParty\include -external:W0
+  INCLUDES = -external:ID:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\thirdParty\include -external:W0
   OBJECT_DIR = CMakeFiles\openglStudy.dir
   OBJECT_FILE_DIR = CMakeFiles\openglStudy.dir
   TARGET_COMPILE_PDB = CMakeFiles\openglStudy.dir\
   TARGET_PDB = openglStudy.pdb
 
-build CMakeFiles\openglStudy.dir\glad.c.obj: C_COMPILER__openglStudy_unscanned_Debug D$:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\glad.c || cmake_object_order_depends_target_openglStudy
+build CMakeFiles\openglStudy.dir\glad.c.obj: C_COMPILER__openglStudy_unscanned_Debug D$:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\glad.c || cmake_object_order_depends_target_openglStudy
   DEFINES = -DDEBUG
   FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
-  INCLUDES = -external:ID:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\thirdParty\include -external:W0
+  INCLUDES = -external:ID:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\thirdParty\include -external:W0
   OBJECT_DIR = CMakeFiles\openglStudy.dir
   OBJECT_FILE_DIR = CMakeFiles\openglStudy.dir
   TARGET_COMPILE_PDB = CMakeFiles\openglStudy.dir\
@@ -79,7 +79,7 @@ build openglStudy.exe: CXX_EXECUTABLE_LINKER__openglStudy_Debug CMakeFiles\openg
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = glfw3.lib  wrapper\wrapper.lib  application\app.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  LINK_PATH = -LIBPATH:D:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\SYSTEM   -LIBPATH:D:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\thirdParty\lib
+  LINK_PATH = -LIBPATH:D:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\SYSTEM   -LIBPATH:D:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\thirdParty\lib
   OBJECT_DIR = CMakeFiles\openglStudy.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -93,7 +93,7 @@ build openglStudy.exe: CXX_EXECUTABLE_LINKER__openglStudy_Debug CMakeFiles\openg
 # Utility command for edit_cache
 
 build CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D D:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug && D:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -104,7 +104,7 @@ build edit_cache: phony CMakeFiles\edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D D:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SD:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy -BD:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug && D:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe --regenerate-during-build -SD:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy -BD:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -113,7 +113,7 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# D:/OpenGLZhao/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/CMakeLists.txt
+# D:/软件/fork/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -125,10 +125,10 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
 build cmake_object_order_depends_target_wrapper: phony || .
 
-build wrapper\CMakeFiles\wrapper.dir\checkError.cpp.obj: CXX_COMPILER__wrapper_unscanned_Debug D$:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\wrapper\checkError.cpp || cmake_object_order_depends_target_wrapper
+build wrapper\CMakeFiles\wrapper.dir\checkError.cpp.obj: CXX_COMPILER__wrapper_unscanned_Debug D$:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\wrapper\checkError.cpp || cmake_object_order_depends_target_wrapper
   DEFINES = -DDEBUG
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -external:ID:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\thirdParty\include -external:W0
+  INCLUDES = -external:ID:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\thirdParty\include -external:W0
   OBJECT_DIR = wrapper\CMakeFiles\wrapper.dir
   OBJECT_FILE_DIR = wrapper\CMakeFiles\wrapper.dir
   TARGET_COMPILE_PDB = wrapper\CMakeFiles\wrapper.dir\wrapper.pdb
@@ -157,7 +157,7 @@ build wrapper\wrapper.lib: CXX_STATIC_LIBRARY_LINKER__wrapper_Debug wrapper\CMak
 # Utility command for edit_cache
 
 build wrapper\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D D:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug\wrapper && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug\wrapper && D:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -168,7 +168,7 @@ build wrapper\edit_cache: phony wrapper\CMakeFiles\edit_cache.util
 # Utility command for rebuild_cache
 
 build wrapper\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D D:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug\wrapper && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SD:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy -BD:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug\wrapper && D:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe --regenerate-during-build -SD:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy -BD:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -177,7 +177,7 @@ build wrapper\rebuild_cache: phony wrapper\CMakeFiles\rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# D:/OpenGLZhao/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/CMakeLists.txt
+# D:/软件/fork/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -189,10 +189,10 @@ build wrapper\rebuild_cache: phony wrapper\CMakeFiles\rebuild_cache.util
 
 build cmake_object_order_depends_target_app: phony || .
 
-build application\CMakeFiles\app.dir\application.cpp.obj: CXX_COMPILER__app_unscanned_Debug D$:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\application\application.cpp || cmake_object_order_depends_target_app
+build application\CMakeFiles\app.dir\application.cpp.obj: CXX_COMPILER__app_unscanned_Debug D$:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\application\application.cpp || cmake_object_order_depends_target_app
   DEFINES = -DDEBUG
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
-  INCLUDES = -external:ID:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\thirdParty\include -external:W0
+  INCLUDES = -external:ID:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\thirdParty\include -external:W0
   OBJECT_DIR = application\CMakeFiles\app.dir
   OBJECT_FILE_DIR = application\CMakeFiles\app.dir
   TARGET_COMPILE_PDB = application\CMakeFiles\app.dir\app.pdb
@@ -221,7 +221,7 @@ build application\app.lib: CXX_STATIC_LIBRARY_LINKER__app_Debug application\CMak
 # Utility command for edit_cache
 
 build application\CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D D:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug\application && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug\application && D:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -232,7 +232,7 @@ build application\edit_cache: phony application\CMakeFiles\edit_cache.util
 # Utility command for rebuild_cache
 
 build application\CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\windows\system32\cmd.exe /C "cd /D D:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug\application && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SD:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy -BD:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug"
+  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D D:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug\application && D:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe --regenerate-during-build -SD:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy -BD:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\out\build\x64-Debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -258,21 +258,21 @@ build wrapper.lib: phony wrapper\wrapper.lib
 # =============================================================================
 
 #############################################
-# Folder: D:/OpenGLZhao/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/build/x64-Debug
+# Folder: D:/软件/fork/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/build/x64-Debug
 
 build all: phony openglStudy.exe wrapper\all application\all
 
 # =============================================================================
 
 #############################################
-# Folder: D:/OpenGLZhao/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/build/x64-Debug/application
+# Folder: D:/软件/fork/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/build/x64-Debug/application
 
 build application\all: phony application\app.lib
 
 # =============================================================================
 
 #############################################
-# Folder: D:/OpenGLZhao/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/build/x64-Debug/wrapper
+# Folder: D:/软件/fork/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/build/x64-Debug/wrapper
 
 build wrapper\all: phony wrapper\wrapper.lib
 
@@ -283,14 +283,14 @@ build wrapper\all: phony wrapper\wrapper.lib
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.29.5-msvc4\CMakeCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeCXXCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeRCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeSystem.cmake D$:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\CMakeLists.txt D$:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\application\CMakeLists.txt D$:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\wrapper\CMakeLists.txt
+build build.ninja: RERUN_CMAKE | CMakeCache.txt CMakeFiles\3.29.5-msvc4\CMakeCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeCXXCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeRCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeSystem.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCInformation.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCXXInformation.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeGenericSystem.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeRCInformation.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-C.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-C.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake D$:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\CMakeLists.txt D$:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\application\CMakeLists.txt D$:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\wrapper\CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCXXInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeGenericSystem.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeRCInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-C.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows.cmake C$:\Program$ Files\Microsoft$ Visual$ Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake CMakeCache.txt CMakeFiles\3.29.5-msvc4\CMakeCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeCXXCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeRCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeSystem.cmake D$:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\CMakeLists.txt D$:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\application\CMakeLists.txt D$:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\wrapper\CMakeLists.txt: phony
+build CMakeCache.txt CMakeFiles\3.29.5-msvc4\CMakeCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeCXXCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeRCCompiler.cmake CMakeFiles\3.29.5-msvc4\CMakeSystem.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCInformation.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCXXInformation.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeCommonLanguageInclude.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeGenericSystem.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeInitializeConfigs.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeLanguageInformation.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeRCInformation.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInformation.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\CMakeSystemSpecificInitialize.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\CMakeCommonCompilerMacros.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-C.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC-CXX.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Compiler\MSVC.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-Initialize.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-C.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC-CXX.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows-MSVC.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\Windows.cmake D$:\VistulStudio2022\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.29\Modules\Platform\WindowsPaths.cmake D$:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\CMakeLists.txt D$:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\application\CMakeLists.txt D$:\软件\fork\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\wrapper\CMakeLists.txt: phony
 
 
 #############################################

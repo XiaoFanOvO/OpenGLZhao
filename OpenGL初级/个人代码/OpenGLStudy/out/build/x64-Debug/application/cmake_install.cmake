@@ -1,8 +1,8 @@
-# Install script for directory: D:/OpenGLZhao/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/application
+# Install script for directory: D:/软件/fork/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/application
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "D:/OpenGLZhao/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/install/x64-Debug")
+  set(CMAKE_INSTALL_PREFIX "D:/软件/fork/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
