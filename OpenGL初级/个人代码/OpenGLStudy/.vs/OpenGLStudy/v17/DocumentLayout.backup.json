@@ -7,18 +7,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\application\\application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:application\\application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\application\\application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:application\\application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\wrapper\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:wrapper\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -29,6 +17,18 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\wrapper\\checkError.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:wrapper\\checkError.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\application\\application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:application\\application.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\application\\application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:application\\application.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\wrapper\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:wrapper\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,7 +54,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "application.cpp",
               "DocumentMoniker": "D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\application\\application.cpp",
               "RelativeDocumentMoniker": "application\\application.cpp",
@@ -62,12 +62,11 @@
               "RelativeToolTip": "application\\application.cpp",
               "ViewState": "AgIAADkAAAAAAAAAAAAAAGcAAABgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-03-12T07:05:41.678Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T07:05:41.678Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "application.h",
               "DocumentMoniker": "D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\application\\application.h",
               "RelativeDocumentMoniker": "application\\application.h",
@@ -75,8 +74,7 @@
               "RelativeToolTip": "application\\application.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-12T07:05:32.996Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-12T07:05:32.996Z"
             },
             {
               "$type": "Document",
@@ -86,14 +84,14 @@
               "RelativeDocumentMoniker": "main.cpp",
               "ToolTip": "D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\main.cpp",
               "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAFMAAAAAAAAAAAAQwMEAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAQwNYAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-11T07:48:21.789Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "CMakeLists.txt",
               "DocumentMoniker": "D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\wrapper\\CMakeLists.txt",
               "RelativeDocumentMoniker": "wrapper\\CMakeLists.txt",
@@ -105,19 +103,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "checkError.h",
               "DocumentMoniker": "D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\wrapper\\checkError.h",
               "RelativeDocumentMoniker": "wrapper\\checkError.h",
               "ToolTip": "D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\wrapper\\checkError.h",
               "RelativeToolTip": "wrapper\\checkError.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-03-12T06:33:10.194Z"
+              "WhenOpened": "2025-03-12T06:33:10.194Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "CMakeLists.txt",
               "DocumentMoniker": "D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\application\\CMakeLists.txt",
               "RelativeDocumentMoniker": "application\\CMakeLists.txt",
@@ -125,11 +124,12 @@
               "RelativeToolTip": "application\\CMakeLists.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-03-12T07:19:28.776Z"
+              "WhenOpened": "2025-03-12T07:19:28.776Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "CMakeLists.txt",
               "DocumentMoniker": "D:\\OpenGLZhao\\OpenGLZhao\\OpenGL\u521D\u7EA7\\\u4E2A\u4EBA\u4EE3\u7801\\OpenGLStudy\\CMakeLists.txt",
               "RelativeDocumentMoniker": "CMakeLists.txt",
@@ -137,7 +137,8 @@
               "RelativeToolTip": "CMakeLists.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-03-11T07:47:35.517Z"
+              "WhenOpened": "2025-03-11T07:47:35.517Z",
+              "EditorCaption": ""
             }
           ]
         }
