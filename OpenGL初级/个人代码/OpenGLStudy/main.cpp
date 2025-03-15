@@ -11,7 +11,6 @@
 
 GLuint vao, program;
 
-
 //声明且实现一个响应窗体大小变化的函数
 void frameBufferSizeCallBack(GLFWwindow* window, int width, int height) {
 	//std::cout << "窗体最新大小：" << width << " , " << height << std::endl;
@@ -23,7 +22,6 @@ void OnResize(int width, int height){
 	GL_CALL(glViewport(0, 0, width, height));
 	std::cout << "OnResize" << std::endl;
 }
-
 
 void OnKey(int key, int action, int mods) {
 	std::cout << key << std::endl;
@@ -133,23 +131,80 @@ void prepareVAOForGLTriangles() {
 
 }
 
+void prepareVAO() {
+	//1 准备positions colors
+	float positions[] = {
+		-0.5f, -0.5f, 0.0f,
+		0.5f, -0.5f, 0.0f,
+		0.0f,  0.5f, 0.0f,
+	};
+
+	float colors[] = {
+		1.0f, 0.0f,0.0f,
+		0.0f, 1.0f,0.0f,
+		0.0f, 0.0f,1.0f
+	};
+
+	unsigned int indices[] = {
+		0, 1, 2
+	};
+
+	//2 VBO创建
+	GLuint posVbo, colorVbo;
+	glGenBuffers(1, &posVbo);
+	glBindBuffer(GL_ARRAY_BUFFER, posVbo);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(positions), positions, GL_STATIC_DRAW);
+
+	glGenBuffers(1, &colorVbo);
+	glBindBuffer(GL_ARRAY_BUFFER, colorVbo);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(colors), colors, GL_STATIC_DRAW);
+
+	//3 EBO创建
+	GLuint ebo;
+	glGenBuffers(1, &ebo);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+	//4 VAO创建
+	glGenVertexArrays(1, &vao);
+	glBindVertexArray(vao);
+	//5 绑定vbo和ebo 加入属性描述信息
+	//5.1 加入位置属性描述信息
+	glBindBuffer(GL_ARRAY_BUFFER, posVbo);// 上面有这行代码 这里可以省略 但是不建议
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, (void*)0);
+	//5.2 加入颜色属性描述数据
+	glBindBuffer(GL_ARRAY_BUFFER, colorVbo);
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, (void*)0);
+
+	//5.3 加入ebo到当前的vao
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo); // 这行代码就已经将ebo绑定到了当前的vao
+	//上面有这行代码 但是这里不能省略 因为vbo有glVertexAttribPointer这个方法主动进行当前vbo的查询
+	//ebo没有这种代码 不调用glBindBuffer的话他不会主动去查当前绑没绑ebo 所以需要主动调用
+	glBindVertexArray(0);
+}
 
 void prepareShader() {
 	//1 完成vs与fs的源代码，并且装入字符串
 	const char* vertexShaderSource =
 		"#version 460 core\n"
 		"layout (location = 0) in vec3 aPos;\n"
+		"layout (location = 1) in vec3 aColor;\n"
+		"out vec3 color;\n"
 		"void main()\n"
 		"{\n"
 		"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+		"   color = aColor;\n"
 		"}\0";
 	const char* fragmentShaderSource =
 		"#version 330 core\n"
 		"out vec4 FragColor;\n"
+		"in vec3 color;\n"
 		"void main()\n"
 		"{\n"
-		"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n"
+		"   FragColor = vec4(color, 1.0f);\n"
 		"}\n\0";
+
 	//2 创建shader程序(vs fs)
 	GLuint vertex, fragment;
 	vertex = glCreateShader(GL_VERTEX_SHADER);
@@ -203,16 +258,29 @@ void prepareShader() {
 }
 
 void render() {
+	/*
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+	//如果加上这一行代码 最后的效果是只会有一帧画出来 从第二帧开始就报错
+	//原因是上面已经将当前VAO设置为了0 当前VAO里面还有之前绑定的EBO的信息 
+	//在下面绑定VAO的时候 这时EBO的信息还在 (可以理解为会自动设置为当前的EBO) 所以第一帧可以画出来
+	//但是第二帧时,通过这个方法将当前EBO设置为0,此时绑着VAO,所以也会将VAO上绑定的EBO设置为0.导致拿不到数据报错
+	*/
 	//执行opengl画布清理操作
 	GL_CALL(glClear(GL_COLOR_BUFFER_BIT));
-
 	//1 绑定当前的program
 	glUseProgram(program);
 	//2 绑定当前的vao
 	glBindVertexArray(vao);
 	//3 发出绘制指令
 	//glDrawArrays(GL_TRIANGLES, 0, 6); // 会自动以每三个点构成一个三角形的方式做渲染
-	glDrawArrays(GL_LINE_STRIP, 0, 6); // 会自动以每三个点构成一个三角形的方式做渲染
+	//glDrawArrays(GL_LINE_STRIP, 0, 6); 
+	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
+	//glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, (void*)(sizeof(int) * 3));//带三个单位的偏移
+	//unsigned int indices[] = {
+	//	0, 1, 2,
+	//	2, 1, 3
+	//};
+	//glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, indices);//需要注释上面的绑定ebo到vao的代码
 }
 
 /* 绑定VBO练习
@@ -305,7 +373,7 @@ int main() {
 	GL_CALL(glClearColor(0.2f, 0.3f, 0.3f, 1.0f));
 
 	prepareShader();
-	prepareVAOForGLTriangles();
+	prepareVAO();
 
 	while (app->update())
 	{
