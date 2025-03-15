@@ -1,8 +1,8 @@
-# Install script for directory: D:/软件/fork/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy
+# Install script for directory: D:/OpenGLZhao/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "D:/软件/fork/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/install/x64-Debug")
+  set(CMAKE_INSTALL_PREFIX "D:/OpenGLZhao/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/install/x64-Debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,8 +34,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/软件/fork/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/build/x64-Debug/wrapper/cmake_install.cmake")
-  include("D:/软件/fork/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/build/x64-Debug/application/cmake_install.cmake")
+  include("D:/OpenGLZhao/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/build/x64-Debug/wrapper/cmake_install.cmake")
+  include("D:/OpenGLZhao/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/build/x64-Debug/application/cmake_install.cmake")
+  include("D:/OpenGLZhao/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/build/x64-Debug/glframework/cmake_install.cmake")
 
 endif()
 
@@ -47,5 +48,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/软件/fork/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/build/x64-Debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/OpenGLZhao/OpenGLZhao/OpenGL初级/个人代码/OpenGLStudy/out/build/x64-Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

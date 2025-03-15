@@ -1,15 +1,19 @@
 #include <iostream>
 
-//注意：glad头文件必须在glfw引用之前引用
-#include<glad/glad.h>
-#include <GLFW/glfw3.h>
+#include "glframework/core.h"
+#include "glframework/shader.h"
 #include <string>
 #include <assert.h>//断言
 #include "wrapper/checkError.h"
 #include "application/application.h"
 
+#define STB_IMAGE_IMPLEMENTATION 
+#include "application/stb_image.h"
 
-GLuint vao, program;
+
+GLuint vao;
+GLuint texture;
+Shader* shader = nullptr;
 
 //声明且实现一个响应窗体大小变化的函数
 void frameBufferSizeCallBack(GLFWwindow* window, int width, int height) {
@@ -144,13 +148,18 @@ void prepareVAO() {
 		0.0f, 1.0f,0.0f,
 		0.0f, 0.0f,1.0f
 	};
+	float uvs[] = {
+		0.0f, 0.0f,
+		1.0f, 0.0f,
+		0.5f, 1.0f
+	};
 
 	unsigned int indices[] = {
 		0, 1, 2
 	};
 
 	//2 VBO创建
-	GLuint posVbo, colorVbo;
+	GLuint posVbo, colorVbo, uvVbo;
 	glGenBuffers(1, &posVbo);
 	glBindBuffer(GL_ARRAY_BUFFER, posVbo);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(positions), positions, GL_STATIC_DRAW);
@@ -158,6 +167,10 @@ void prepareVAO() {
 	glGenBuffers(1, &colorVbo);
 	glBindBuffer(GL_ARRAY_BUFFER, colorVbo);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(colors), colors, GL_STATIC_DRAW);
+
+	glGenBuffers(1, &uvVbo);
+	glBindBuffer(GL_ARRAY_BUFFER, uvVbo);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(uvs), uvs, GL_STATIC_DRAW);
 
 	//3 EBO创建
 	GLuint ebo;
@@ -167,17 +180,32 @@ void prepareVAO() {
 	//4 VAO创建
 	glGenVertexArrays(1, &vao);
 	glBindVertexArray(vao);
+
+	/*
+	//动态获取位置
+	//不用在shader里显式写location = 0来获取VAO的属性ID 
+	//直接这里在下面绑定的时候采用glGetAttribLocation返回的ID即可
+	GLuint posLocation = glGetAttribLocation(shader->mProgram, "aPos");
+	GLuint colorLocation = glGetAttribLocation(shader->mProgram, "aColor");
+	*/
+	
 	//5 绑定vbo和ebo 加入属性描述信息
 	//5.1 加入位置属性描述信息
 	glBindBuffer(GL_ARRAY_BUFFER, posVbo);// 上面有这行代码 这里可以省略 但是不建议
 	glEnableVertexAttribArray(0);
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, (void*)0);
+	
 	//5.2 加入颜色属性描述数据
 	glBindBuffer(GL_ARRAY_BUFFER, colorVbo);
 	glEnableVertexAttribArray(1);
 	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, (void*)0);
 
-	//5.3 加入ebo到当前的vao
+	//5.3 加入uv属性描述数据
+	glBindBuffer(GL_ARRAY_BUFFER, uvVbo);
+	glEnableVertexAttribArray(2);
+	glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, (void*)0);
+
+	//5.4 加入ebo到当前的vao
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo); // 这行代码就已经将ebo绑定到了当前的vao
 	//上面有这行代码 但是这里不能省略 因为vbo有glVertexAttribPointer这个方法主动进行当前vbo的查询
 	//ebo没有这种代码 不调用glBindBuffer的话他不会主动去查当前绑没绑ebo 所以需要主动调用
@@ -185,77 +213,35 @@ void prepareVAO() {
 }
 
 void prepareShader() {
-	//1 完成vs与fs的源代码，并且装入字符串
-	const char* vertexShaderSource =
-		"#version 460 core\n"
-		"layout (location = 0) in vec3 aPos;\n"
-		"layout (location = 1) in vec3 aColor;\n"
-		"out vec3 color;\n"
-		"void main()\n"
-		"{\n"
-		"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
-		"   color = aColor;\n"
-		"}\0";
-	const char* fragmentShaderSource =
-		"#version 330 core\n"
-		"out vec4 FragColor;\n"
-		"in vec3 color;\n"
-		"void main()\n"
-		"{\n"
-		"   FragColor = vec4(color, 1.0f);\n"
-		"}\n\0";
-
-	//2 创建shader程序(vs fs)
-	GLuint vertex, fragment;
-	vertex = glCreateShader(GL_VERTEX_SHADER);
-	fragment = glCreateShader(GL_FRAGMENT_SHADER);
-
-	//3 为shader程序输入shader代码
-	glShaderSource(vertex, 1, &vertexShaderSource, NULL); //以\0自然结尾的字符串 不需要告诉他长度系统自己就知道在哪里结尾
-	glShaderSource(fragment, 1, &fragmentShaderSource, NULL);
-
-	int success = 0;
-	char infoLog[1024];
-	//4 执行shader代码编译
-	glCompileShader(vertex);
-	//检查vertex编译结果
-	glGetShaderiv(vertex, GL_COMPILE_STATUS, &success);
-	if (!success)
-	{
-		glGetShaderInfoLog(vertex, 1024, NULL, infoLog);
-		std::cout << "Error:SHADER COMPILE ERROR --VERTEX" << "\n" << infoLog << std::endl;
-	}
-	glCompileShader(fragment);
-	//检查fragment编译结果
-	glGetShaderiv(fragment, GL_COMPILE_STATUS, &success);
-	if (!success)
-	{
-		glGetShaderInfoLog(fragment, 1024, NULL, infoLog);
-		std::cout << "Error:SHADER COMPILE ERROR --FRAGMENT" << "\n" << infoLog << std::endl;
-	}
-
-	//5 创建一个Program壳子
-	program = glCreateProgram();
-
-	//6 将vs与fs编译好的结果放到program这个壳子里
-	glAttachShader(program, vertex);
-	glAttachShader(program, fragment);
-
-	//7 执行program的链接操作,形成最终可执行shader程序
-	glLinkProgram(program);
-	//检查链接错误
-	glGetProgramiv(program, GL_LINK_STATUS, &success);
-	if (!success)
-	{
-		glGetProgramInfoLog(program, 1024, NULL, infoLog);
-		std::cout << "Error:SHADER LINK ERROR" << "\n" << infoLog << std::endl;
-	}
-
-	//清理
-	glDeleteShader(vertex);//已经编译进program了 所以这里直接清理掉
-	glDeleteShader(fragment);
-
+	shader = new Shader("assets/shaders/vertex.glsl", "assets/shaders/fragment.glsl");
 }
+
+void prepareTexture() {
+	//1 stbImage 读取图片
+	int width, height, channels;
+	//--翻转y轴
+	stbi_set_flip_vertically_on_load(true);
+	unsigned char* data = stbi_load("assets/textures/goku.jpg", &width, &height, &channels, STBI_rgb_alpha);//读取出来全部转化为RGBA格式
+	//2 生成纹理并且激活单元绑定
+	glGenTextures(1, &texture);
+	//--激活纹理单元--
+	glActiveTexture(GL_TEXTURE0);
+	//--绑定纹理对象--
+	glBindTexture(GL_TEXTURE_2D, texture);//这里就自动与上面激活的0号纹理单元链接
+	//3 传输纹理数据 开辟显存 从CPU到GPU
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+	//***释放数据
+	stbi_image_free(data);
+
+	//4 设置纹理过滤方式
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); // 需要的像素>图片像素 用双线性插值
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);// 需要的像素<图片像素 用临近过滤
+
+	//5 设置纹理的包裹方式
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);//u
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);//v
+}
+
 
 void render() {
 	/*
@@ -268,13 +254,22 @@ void render() {
 	//执行opengl画布清理操作
 	GL_CALL(glClear(GL_COLOR_BUFFER_BIT));
 	//1 绑定当前的program
-	glUseProgram(program);
+	shader->begin();
+	//shader->setFloat("time", glfwGetTime());//要设置uniform变量一定要先useprogram
+	//shader->setFloat("speed", 2.0f);//要设置uniform变量一定要先useprogram
+	//shader->setVector3("uColor", 0.3f, 0.4f, 0.5f);
+	shader->setInt("sampler", 0);//绑定在0号纹理单元上
+	float color[] = {0.9f, 0.3f, 0.25f};
+	shader->setVector3("uColor", color);
 	//2 绑定当前的vao
 	glBindVertexArray(vao);
 	//3 发出绘制指令
 	//glDrawArrays(GL_TRIANGLES, 0, 6); // 会自动以每三个点构成一个三角形的方式做渲染
 	//glDrawArrays(GL_LINE_STRIP, 0, 6); 
 	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
+	glBindVertexArray(0);
+	shader->end();
+	//另外两种调用方式
 	//glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, (void*)(sizeof(int) * 3));//带三个单位的偏移
 	//unsigned int indices[] = {
 	//	0, 1, 2,
@@ -374,6 +369,7 @@ int main() {
 
 	prepareShader();
 	prepareVAO();
+	prepareTexture();
 
 	while (app->update())
 	{

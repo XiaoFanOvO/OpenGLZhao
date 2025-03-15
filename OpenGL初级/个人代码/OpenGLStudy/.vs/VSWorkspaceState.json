@@ -8,7 +8,12 @@
   "ExpandedNodes": [
     "",
     "\\application",
+    "\\assets",
+    "\\assets\\shaders",
+    "\\assets\\textures",
+    "\\glframework",
     "\\wrapper"
   ],
+  "SelectedNode": "\\assets\\shaders\\fragment.glsl",
   "PreviewInSolutionExplorer": false
 }
