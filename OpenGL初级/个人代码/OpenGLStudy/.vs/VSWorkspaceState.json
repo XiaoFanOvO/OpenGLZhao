@@ -14,6 +14,6 @@
     "\\glframework",
     "\\wrapper"
   ],
-  "SelectedNode": "\\assets\\shaders\\fragment.glsl",
+  "SelectedNode": "\\glframework\\texture.cpp",
   "PreviewInSolutionExplorer": false
 }

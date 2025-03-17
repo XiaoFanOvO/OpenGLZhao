@@ -6,14 +6,12 @@
 #include <assert.h>//断言
 #include "wrapper/checkError.h"
 #include "application/application.h"
-
-#define STB_IMAGE_IMPLEMENTATION 
-#include "application/stb_image.h"
+#include "glframework/texture.h"
 
 
 GLuint vao;
-GLuint texture;
 Shader* shader = nullptr;
+Texture* texture = nullptr;
 
 //声明且实现一个响应窗体大小变化的函数
 void frameBufferSizeCallBack(GLFWwindow* window, int width, int height) {
@@ -140,22 +138,27 @@ void prepareVAO() {
 	float positions[] = {
 		-0.5f, -0.5f, 0.0f,
 		0.5f, -0.5f, 0.0f,
-		0.0f,  0.5f, 0.0f,
+		-0.5f,  0.5f, 0.0f,
+		0.5f,  0.5f, 0.0f,
 	};
 
 	float colors[] = {
 		1.0f, 0.0f,0.0f,
 		0.0f, 1.0f,0.0f,
-		0.0f, 0.0f,1.0f
+		0.0f, 0.0f,1.0f,
+		0.5f, 0.5f,0.5f
 	};
+
 	float uvs[] = {
 		0.0f, 0.0f,
 		1.0f, 0.0f,
-		0.5f, 1.0f
+		0.0f, 1.0f,
+		1.0f, 1.0f,
 	};
 
 	unsigned int indices[] = {
-		0, 1, 2
+		0, 1, 2,
+		2, 1, 3
 	};
 
 	//2 VBO创建
@@ -217,29 +220,7 @@ void prepareShader() {
 }
 
 void prepareTexture() {
-	//1 stbImage 读取图片
-	int width, height, channels;
-	//--翻转y轴
-	stbi_set_flip_vertically_on_load(true);
-	unsigned char* data = stbi_load("assets/textures/goku.jpg", &width, &height, &channels, STBI_rgb_alpha);//读取出来全部转化为RGBA格式
-	//2 生成纹理并且激活单元绑定
-	glGenTextures(1, &texture);
-	//--激活纹理单元--
-	glActiveTexture(GL_TEXTURE0);
-	//--绑定纹理对象--
-	glBindTexture(GL_TEXTURE_2D, texture);//这里就自动与上面激活的0号纹理单元链接
-	//3 传输纹理数据 开辟显存 从CPU到GPU
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
-	//***释放数据
-	stbi_image_free(data);
-
-	//4 设置纹理过滤方式
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR); // 需要的像素>图片像素 用双线性插值
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);// 需要的像素<图片像素 用临近过滤
-
-	//5 设置纹理的包裹方式
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);//u
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);//v
+	texture = new Texture("assets/textures/hinata.jpg", 0);
 }
 
 
@@ -258,15 +239,15 @@ void render() {
 	//shader->setFloat("time", glfwGetTime());//要设置uniform变量一定要先useprogram
 	//shader->setFloat("speed", 2.0f);//要设置uniform变量一定要先useprogram
 	//shader->setVector3("uColor", 0.3f, 0.4f, 0.5f);
-	shader->setInt("sampler", 0);//绑定在0号纹理单元上
-	float color[] = {0.9f, 0.3f, 0.25f};
-	shader->setVector3("uColor", color);
+	shader->setInt("sampler", 0);//sampler该采样哪个纹理单元
+	//float color[] = {0.9f, 0.3f, 0.25f};
+	//shader->setVector3("uColor", color);
 	//2 绑定当前的vao
 	glBindVertexArray(vao);
 	//3 发出绘制指令
 	//glDrawArrays(GL_TRIANGLES, 0, 6); // 会自动以每三个点构成一个三角形的方式做渲染
 	//glDrawArrays(GL_LINE_STRIP, 0, 6); 
-	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
+	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
 	shader->end();
 	//另外两种调用方式
@@ -377,7 +358,7 @@ int main() {
 	}
 
 	app->destory();
-
+	delete texture;
 
 	return 0;
 }

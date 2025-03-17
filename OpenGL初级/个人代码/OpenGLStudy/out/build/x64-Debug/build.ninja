@@ -262,6 +262,15 @@ build glframework\CMakeFiles\fw.dir\shader.cpp.obj: CXX_COMPILER__fw_unscanned_D
   TARGET_COMPILE_PDB = glframework\CMakeFiles\fw.dir\fw.pdb
   TARGET_PDB = glframework\fw.pdb
 
+build glframework\CMakeFiles\fw.dir\texture.cpp.obj: CXX_COMPILER__fw_unscanned_Debug D$:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\glframework\texture.cpp || cmake_object_order_depends_target_fw
+  DEFINES = -DDEBUG
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  INCLUDES = -external:ID:\OpenGLZhao\OpenGLZhao\OpenGL初级\个人代码\OpenGLStudy\thirdParty\include -external:W0
+  OBJECT_DIR = glframework\CMakeFiles\fw.dir
+  OBJECT_FILE_DIR = glframework\CMakeFiles\fw.dir
+  TARGET_COMPILE_PDB = glframework\CMakeFiles\fw.dir\fw.pdb
+  TARGET_PDB = glframework\fw.pdb
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target fw
@@ -270,7 +279,7 @@ build glframework\CMakeFiles\fw.dir\shader.cpp.obj: CXX_COMPILER__fw_unscanned_D
 #############################################
 # Link the static library glframework\fw.lib
 
-build glframework\fw.lib: CXX_STATIC_LIBRARY_LINKER__fw_Debug glframework\CMakeFiles\fw.dir\shader.cpp.obj
+build glframework\fw.lib: CXX_STATIC_LIBRARY_LINKER__fw_Debug glframework\CMakeFiles\fw.dir\shader.cpp.obj glframework\CMakeFiles\fw.dir\texture.cpp.obj
   LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64
   OBJECT_DIR = glframework\CMakeFiles\fw.dir
