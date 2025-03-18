@@ -12,6 +12,9 @@
 GLuint vao;
 Shader* shader = nullptr;
 Texture* texture = nullptr;
+Texture* grassTexture = nullptr;
+Texture* landTexture = nullptr;
+Texture* noiseTexture = nullptr;
 
 //声明且实现一个响应窗体大小变化的函数
 void frameBufferSizeCallBack(GLFWwindow* window, int width, int height) {
@@ -135,31 +138,55 @@ void prepareVAOForGLTriangles() {
 
 void prepareVAO() {
 	//1 准备positions colors
+	//float positions[] = {
+	//	-0.5f, -0.5f, 0.0f,
+	//	0.5f, -0.5f, 0.0f,
+	//	-0.5f,  0.5f, 0.0f,
+	//	0.5f,  0.5f, 0.0f,
+	//};
+
+	//float colors[] = {
+	//	1.0f, 0.0f,0.0f,
+	//	0.0f, 1.0f,0.0f,
+	//	0.0f, 0.0f,1.0f,
+	//	0.5f, 0.5f,0.5f
+	//};
+
+	//float uvs[] = {
+	//	0.0f, 0.0f,
+	//	1.0f, 0.0f,
+	//	0.0f, 1.0f,
+	//	1.0f, 1.0f,
+	//};
+
+	//unsigned int indices[] = {
+	//	0, 1, 2,
+	//	2, 1, 3
+	//};
+
+
 	float positions[] = {
 		-0.5f, -0.5f, 0.0f,
 		0.5f, -0.5f, 0.0f,
-		-0.5f,  0.5f, 0.0f,
-		0.5f,  0.5f, 0.0f,
+		0.0f,  0.5f, 0.0f,
 	};
 
 	float colors[] = {
 		1.0f, 0.0f,0.0f,
 		0.0f, 1.0f,0.0f,
 		0.0f, 0.0f,1.0f,
-		0.5f, 0.5f,0.5f
 	};
 
 	float uvs[] = {
 		0.0f, 0.0f,
 		1.0f, 0.0f,
-		0.0f, 1.0f,
-		1.0f, 1.0f,
+		0.5f, 1.0f,
 	};
 
 	unsigned int indices[] = {
 		0, 1, 2,
-		2, 1, 3
 	};
+
 
 	//2 VBO创建
 	GLuint posVbo, colorVbo, uvVbo;
@@ -220,7 +247,10 @@ void prepareShader() {
 }
 
 void prepareTexture() {
-	texture = new Texture("assets/textures/hinata.jpg", 0);
+	texture = new Texture("assets/textures/goku.jpg", 0);
+	//grassTexture = new Texture("assets/textures/grass.jpg", 0);
+	//landTexture = new Texture("assets/textures/land.jpg", 1);
+	//noiseTexture = new Texture("assets/textures/noise.jpg", 2);
 }
 
 
@@ -236,18 +266,22 @@ void render() {
 	GL_CALL(glClear(GL_COLOR_BUFFER_BIT));
 	//1 绑定当前的program
 	shader->begin();
-	//shader->setFloat("time", glfwGetTime());//要设置uniform变量一定要先useprogram
+	shader->setFloat("time", glfwGetTime());//要设置uniform变量一定要先useprogram
 	//shader->setFloat("speed", 2.0f);//要设置uniform变量一定要先useprogram
 	//shader->setVector3("uColor", 0.3f, 0.4f, 0.5f);
-	shader->setInt("sampler", 0);//sampler该采样哪个纹理单元
+	//shader->setInt("grassSampler", 0);//sampler该采样哪个纹理单元
+	//shader->setInt("landSampler", 1);
+	//shader->setInt("noiseSampler", 2);
 	//float color[] = {0.9f, 0.3f, 0.25f};
 	//shader->setVector3("uColor", color);
 	//2 绑定当前的vao
+	shader->setFloat("width", texture->getWidth());
+	shader->setFloat("height", texture->getHeight());
 	glBindVertexArray(vao);
 	//3 发出绘制指令
 	//glDrawArrays(GL_TRIANGLES, 0, 6); // 会自动以每三个点构成一个三角形的方式做渲染
 	//glDrawArrays(GL_LINE_STRIP, 0, 6); 
-	glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+	glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
 	glBindVertexArray(0);
 	shader->end();
 	//另外两种调用方式

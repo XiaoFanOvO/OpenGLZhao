@@ -10,6 +10,9 @@ public:
 
 	void bind();//将texture挂到openGL状态机上
 
+	int getWidth()  { return mWidth; }
+	int getHeight()  { return mHeight; }
+
 private:
 	GLuint mTexture{ 0 };
 	int mWidth{ 0 };
